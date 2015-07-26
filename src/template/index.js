@@ -85,6 +85,12 @@ export class BUTTON extends EL {
   }
 }
 
+export class H1 extends EL {
+  constructor(elms, key, props) {
+    super('H1', elms, key, props);
+  }
+}
+
 export class H4 extends EL {
   constructor(elms, key, props) {
     super('H4', elms, key, props);
