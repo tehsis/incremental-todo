@@ -13,7 +13,7 @@ This is an usage example of [Incremental DOM](https://github.com/google/incremen
 3 - In the project's root `npm i`
 4 - Make sure to have [GNU Make](www.gnu.org/s/make/) installed and run `make`
 
-## Arquitecture
+## Architecture
 
 This example was build using _Incremental DOM_ for DOM generation and [Babel](https://babeljs.org).
 
@@ -39,6 +39,8 @@ This will render
 ```
 
 under the specified DOM element.
+
+Here, `render` is just a call to _Incremental DOM_'s `patch` method.
 
 It can also build more complex HTML structures
 
@@ -70,3 +72,27 @@ That will render
 </ul>
 </div>
 ```
+
+This abstraction makes use of _Incremental DOM_ magic and comes in handy for mutating DOM as the following example
+
+```js
+// ...
+
+let renderList = (list) => {
+  return new UL([
+    list.map((item) => new LI(item);
+  ]);
+};
+
+let list = ['one', 'two'];
+
+render(myContainer, renderList(list);
+
+list.push('three');
+
+render(myContainer, renderList(list);
+```
+
+Here we're simply 're-rendering' our all list, but thanks to Incremental DOM, it will just update the needed element.
+
+For a more complete example, just take a look at this repo!
