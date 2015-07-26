@@ -15,7 +15,7 @@ This is an usage example of [Incremental DOM](https://github.com/google/incremen
 
 ## Architecture
 
-This example was build using _Incremental DOM_ for DOM generation and [Babel](https://babeljs.org).
+This example was build using _Incremental DOM_ for DOM generation and [Babel](https://babeljs.io).
 
 It was building using a DOM's element abstraction librarie that you can find inside `template/` folder.
 
