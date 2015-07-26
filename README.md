@@ -45,8 +45,7 @@ Here, `render` is just a call to _Incremental DOM_'s `patch` method.
 It can also build more complex HTML structures
 
 ```js
-
-import {
+// ...
 
 let myContainer = document.getElementById('container');
 
