@@ -79,7 +79,7 @@ This abstraction makes use of _Incremental DOM_ magic and comes in handy for mut
 
 let renderList = (list) => {
   return new UL([
-    list.map((item) => new LI(item);
+    list.map((item) => new LI(item));
   ]);
 };
 
