@@ -85,11 +85,11 @@ let renderList = (list) => {
 
 let list = ['one', 'two'];
 
-render(myContainer, renderList(list);
+render(myContainer, renderList(list));
 
 list.push('three');
 
-render(myContainer, renderList(list);
+render(myContainer, renderList(list));
 ```
 
 Here we're simply 're-rendering' our all list, but thanks to Incremental DOM, it will just update the needed element.
