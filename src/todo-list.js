@@ -1,4 +1,4 @@
-import {UL, BUTTON, DIV, A, I, LI, H4, FORM, INPUT, render} from './template';
+import {ul, button, a, i, li, h4, form, input, div} from 'charata';
 
 /**
  * Represents a new todo-list
@@ -55,10 +55,10 @@ export default class TodoList {
    */
   _renderItems() {
     return Object.keys(this.list).map((idx) => {
-      return new LI(
-        new DIV([
+      return li(
+        div([
           this.list[idx],
-          new A(new I('send', null, ['class', 'material-icons']), null, ['class', 'secondary-content', 'href', '#!'])
+          a(i('send', null, ['class', 'material-icons']), null, ['class', 'secondary-content', 'href', '#!'])
         ]), idx, ['data-idx', idx, 'class', 'collection-item']);
     });
   }
@@ -72,9 +72,9 @@ export default class TodoList {
     this.container = container || this.container || document.body;
     let items = this._renderItems();
     if (items.length) {
-      render(new UL(items, null, ['class', 'collection']), this.container);
+      ul(items, null, ['class', 'collection']).renderTo(this.container);
     } else {
-      render(new DIV('Hooray! you are free!', null, ['class', 'center']), this.container);
+      div('Hooray! you are free!', null, ['class', 'center']).renderTo(this.container);
     }
     this._attachEvents();
   }
